@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sistema de Controle de Receitas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <center>
+        <h1>Sistema de Controle de Receitas</h1>
+        <label>Usuario Logado: {{login}}</label>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUsuarios"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Usuarios
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUsuarios">
+                            {{#if ../admin}}
+                            <a class="dropdown-item" href="/usuarioCreate">Cadastrar Usuario</a>
+                            {{/if}}
+                            <a class="dropdown-item" href="/usuarioList">Listar Usuarios</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarCategorias"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categorias
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarCategorias">
+                            <a class="dropdown-item" href="/categoriaCreate">Cadastrar Categoria</a>
+                            <a class="dropdown-item" href="/categoriaList">Listar Categorias</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarReceitas"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Receitas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarReceitas">
+                            <a class="dropdown-item" href="/receitaCreate">Cadastrar Receita</a>
+                            <a class="dropdown-item" href="/receitaList">Listar Receitas</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarComentarios"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Comentarios
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarComentarios">
+                            <a class="dropdown-item" href="/comentarioCreate">Cadastrar Comentario</a>
+                            <a class="dropdown-item" href="/comentarioList">Listar Comentarios</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <br><br>
+        {{{body}}}
+    </center>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,3 +1,3 @@
 # BackEnd
 
-Para instalar os modulos< utilize 'npm i'
+Para instalar os modulos utilize 'npm i'

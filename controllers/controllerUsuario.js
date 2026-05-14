@@ -18,6 +18,10 @@ module.exports = {
                     req.session.tipo = usuarios[0].dataValues.tipo;
                     res.locals.admin = true;
                 }
+                else {
+                    req.session.tipo = usuarios[0].dataValues.tipo;
+                    res.locals.admin = false;
+                }
                 req.session.save(() => {  // 👈 garante que a session foi salva antes de redirecionar
                     res.render('home')
                 });
@@ -36,7 +40,7 @@ module.exports = {
             senha: req.body.senha,
             tipo: req.body.tipo
         }).then(() => {
-            res.redirect('/home');
+            res.render('home')
         }).catch((err) => {
             console.log(err);
         });

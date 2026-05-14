@@ -4,6 +4,7 @@
 <head>
     <title>Sistema de Controle de Receitas</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
 </head>
 
 <body>
@@ -29,7 +30,7 @@
                             Usuarios
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarUsuarios">
-                            {{#if ../admin}}
+                            {{#if admin}}
                             <a class="dropdown-item" href="/usuarioCreate">Cadastrar Usuario</a>
                             {{/if}}
                             <a class="dropdown-item" href="/usuarioList">Listar Usuarios</a>
